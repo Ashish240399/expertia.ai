@@ -1,0 +1,20 @@
+#exp,#ctc{
+    background-color: rgb(3, 3, 67);
+    color:white;
+    padding: 5px 0px;
+}
+
+button{
+    background-color: rgb(64, 104, 4);
+    color:aliceblue;
+    padding: 4px 30px;
+}
+.job-card{
+    border:1px solid gray;
+    padding:10px 20px;
+    width:60%;
+    margin: auto;
+    display: flex;
+    margin-top: 10px;
+    justify-content: space-between;
+}

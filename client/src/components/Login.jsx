@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-
+import "./Login.css"
 function Login() {
     const [user,setUser]=useState({
        
@@ -40,11 +40,11 @@ function Login() {
         }
     }
   return (
-    <div>
+    <div className='login'>
         <form onSubmit={handleSubmit}>
-            <input id="email" onChange={handleChange} type="email" placeholder='Email'/>
-            <input id="password" onChange={handleChange} type="password" placeholder='Password'/>
-            <input type="submit" />
+            <input className='input' id="email" onChange={handleChange} type="email" placeholder='Email'/>
+            <input className='input' id="password" onChange={handleChange} type="password" placeholder='Password'/>
+            <input id="button" type="submit" />
         </form>
     </div>
   )

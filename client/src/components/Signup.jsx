@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-
+import "./Signup.css"
 function Signup() {
     const [user,setUser]=useState({
         name:"",
@@ -25,13 +25,13 @@ function Signup() {
         })
     }
   return (
-    <div>
+    <div className='signup'>
         <form onSubmit={handleSubmit}>
-            <input id="name" onChange={handleChange} type="text" placeholder='Name'/>
-            <input id="email" onChange={handleChange} type="email" placeholder='Email'/>
-            <input id="password" onChange={handleChange} type="password" placeholder='Password'/>
-            <input id="phone" onChange={handleChange} type="text" placeholder='Phone number'/>
-            <input type="submit" />
+            <input className='input' id="name" onChange={handleChange} type="text" placeholder='Name'/>
+            <input className='input' id="email" onChange={handleChange} type="email" placeholder='Email'/>
+            <input className='input' id="password" onChange={handleChange} type="password" placeholder='Password'/>
+            <input className='input' id="phone" onChange={handleChange} type="text" placeholder='Phone number'/>
+            <input className='button' type="submit" />
         </form>
     </div>
   )

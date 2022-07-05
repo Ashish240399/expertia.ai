@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import { JobContext } from '../context/jobsContext';
 import { SearchContext } from '../context/searchContext';
-
+import "./Home.css"
 function Home() {
     const {jobtotal}=useContext(JobContext)
     const {totalJobs}=useContext(JobContext);
@@ -75,7 +75,7 @@ function Home() {
     }
     //console.log(ctc,exp)
   return (
-    <div>
+    <div className='home'>
         
             <select id="exp" onChange={(e)=>setExp(e.target.value)}>
                 <option value="">Experience</option>
@@ -95,13 +95,21 @@ function Home() {
                 setFilterData()
             }}>Filter Data</button>
         {items!==undefined && items.filter((el)=>el.title.includes(searchItem)).map((el)=>(
-            <div>
-                <p onClick={()=>{
-                singleJob(el);
-            }}>{el.title}</p>
-                <button onClick={()=>{
-                    applyJobs(el)
-                }}>Apply</button>
+            <div className='job-card'>
+                <p>
+                    <div><b>Job Title</b> : {el.title}</div>
+                    <div><b>Company</b> : {el.company}</div>
+                </p>
+                <p>
+                    <div style={{marginBottom:"7px"}}>
+                    <button onClick={()=>{
+                        applyJobs(el)
+                    }}>Apply</button>
+                    </div>
+                    <button onClick={()=>{
+                        singleJob(el)
+                    }}>Show Details</button>
+                </p>
             </div>
         ))}
     </div>

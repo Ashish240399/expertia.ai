@@ -1,5 +1,5 @@
 import React from 'react'
-
+import "./ApplyJobs.css"
 function ApplyJobs() {
     const applyingJob=JSON.parse(localStorage.getItem("apply"));
     const user=JSON.parse(localStorage.getItem("user"));
@@ -31,14 +31,14 @@ function ApplyJobs() {
         
     }
   return (
-    <div>
+    <div className='apply'>
         <form onSubmit={formSubmit}>
             <input type="text" placeholder='Name'/>
             <input type="text" placeholder='Higher Education'/>
             <input type="text" placeholder='Experience'/>
             <input type="text" placeholder='Current CTC'/>
             <input type="text" placeholder='Expected CTC'/>
-            <input type="submit"/>
+            <button className='btnapp' type="submit">Submit</button>
         </form>
     </div>
   )

@@ -1,0 +1,12 @@
+.single-card{
+    border:1px solid gray;
+    width:40%;
+    margin: auto;
+    text-align: left;
+    padding:20px;
+}
+.btn{
+    background-color: rgb(64, 104, 4);
+    color:aliceblue;
+    padding: 4px 30px;
+}
