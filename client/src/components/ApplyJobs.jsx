@@ -1,8 +1,11 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 import "./ApplyJobs.css"
 function ApplyJobs() {
+    const navigate=useNavigate()
     const applyingJob=JSON.parse(localStorage.getItem("apply"));
     //console.log(applyingJob);
+
     const user=JSON.parse(localStorage.getItem("user"));
     //console.log(user._id)
     async function formSubmit(e){
@@ -20,15 +23,20 @@ function ApplyJobs() {
             }
         }
         if(applied==false){
-            console.log("in");
+            // console.log("in");
             
-            fetch(`https://job-portal-app-ex.herokuapp.com/users/${user._id}/job_apply`,{
-                method:"POST",
-                headers:{
-                    "Content-Type":"application/json"
-                },
-                body:JSON.stringify({id:applyingJob._id})
-            })
+            // fetch(`https://job-portal-app-ex.herokuapp.com/users/${user._id}/job_apply`,{
+            //     method:"POST",
+            //     headers:{
+            //         "Content-Type":"application/json"
+            //     },
+            //     body:JSON.stringify({id:applyingJob._id})
+            // }).then(()=>{
+            //     alert("Applied successfully");
+            //     navigate("/");
+            // })
+            alert("Applied successfully");
+            navigate("/");
         }
         
     }
