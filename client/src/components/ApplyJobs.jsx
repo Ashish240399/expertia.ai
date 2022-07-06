@@ -2,14 +2,15 @@ import React from 'react'
 import "./ApplyJobs.css"
 function ApplyJobs() {
     const applyingJob=JSON.parse(localStorage.getItem("apply"));
+    //console.log(applyingJob);
     const user=JSON.parse(localStorage.getItem("user"));
-    console.log(user._id)
+    //console.log(user._id)
     async function formSubmit(e){
         e.preventDefault();
         let applied=false;
         const data=await fetch(`https://job-portal-app-ex.herokuapp.com/users/${user._id}/by-Id`);
         const res=await data.json();
-        console.log(res.applied_job)
+        //console.log(res.applied_job)
         if(res.applied_job!==undefined){
             for(var i=0;i<res.applied_job.length;i++){
                 if(res[i]==applyingJob._id){
@@ -18,14 +19,15 @@ function ApplyJobs() {
                 }
             }
         }
-        if(!applied){
-            console.log("in")
-            fetch(`https://job-portal-app-ex.herokuapp.com/users/${user._id}/job_apply`,{
+        if(applied==false){
+            console.log("in");
+            
+            fetch(`http://localhost:5000/users/${user._id}/job_apply`,{
                 method:"POST",
                 headers:{
                     "Content-Type":"application/json"
                 },
-                body:JSON.stringify(applyingJob._id)
+                body:JSON.stringify({id:applyingJob._id})
             })
         }
         

@@ -59,7 +59,6 @@ router.get("/:email",async(req,res)=>{
 })
 router.get("/:id/by-Id",async(req,res)=>{
     try {
-        
         const user=await User.find({_id:req.params.id}).lean().exec();
         return res.send(user)
     } catch (error) {
@@ -67,13 +66,15 @@ router.get("/:id/by-Id",async(req,res)=>{
     }
 })
 router.post("/:id/job_apply",async(req,res)=>{
+    console.log(1);
     try {
-        const job=req.body;
-        console.log(job)
+        console.log("yes")
+        // const job=req.body;
+        // console.log(job)
         //const user=await User.updateOne({_id:req.params.id},{$push:{applied_job:{job}}});
         //return res.send(user)
     } catch (error) {
-        
+        return res.send(error)
     }
 })
 module.exports=router;
