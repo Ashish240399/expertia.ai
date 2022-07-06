@@ -43,6 +43,7 @@ function ApplyJobs() {
   return (
     <div className='apply'>
         <form onSubmit={formSubmit}>
+        <h2>Fill details</h2>
             <input type="text" placeholder='Name'/>
             <input type="text" placeholder='Higher Education'/>
             <input type="text" placeholder='Experience'/>
