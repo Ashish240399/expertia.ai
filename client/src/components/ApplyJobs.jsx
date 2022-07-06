@@ -23,18 +23,18 @@ function ApplyJobs() {
             }
         }
         if(applied==false){
-            // console.log("in");
+            console.log("in");
             
-            // fetch(`https://job-portal-app-ex.herokuapp.com/users/${user._id}/job_apply`,{
-            //     method:"POST",
-            //     headers:{
-            //         "Content-Type":"application/json"
-            //     },
-            //     body:JSON.stringify({id:applyingJob._id})
-            // }).then(()=>{
-            //     alert("Applied successfully");
-            //     navigate("/");
-            // })
+            fetch(`http://localhost:5000/users/${user._id}/job_apply`,{
+                method:"POST",
+                headers:{
+                    "Content-Type":"application/json"
+                },
+                body:JSON.stringify({id:applyingJob._id})
+            }).then(()=>{
+                alert("Applied successfully");
+                navigate("/");
+            })
             alert("Applied successfully");
             navigate("/");
         }

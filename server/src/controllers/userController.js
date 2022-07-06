@@ -68,11 +68,16 @@ router.get("/:id/by-Id",async(req,res)=>{
 router.post("/:id/job_apply",async(req,res)=>{
     console.log(1);
     try {
+        //const applied=await User.find()
         console.log("yes")
-        // const job=req.body;
-        // console.log(job)
-        //const user=await User.updateOne({_id:req.params.id},{$push:{applied_job:{job}}});
-        //return res.send(user)
+        const job=req.body;
+        console.log(job.id)
+        // if(applied){
+        //     return;
+        // }
+        const user=await User.updateOne({_id:req.params.id},{$push:{applied_job:job.id}});
+        console.log(user)
+        return res.send(user)
     } catch (error) {
         return res.send(error)
     }

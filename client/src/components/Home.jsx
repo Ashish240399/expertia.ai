@@ -8,7 +8,7 @@ function Home() {
     const {totalJobs}=useContext(JobContext);
     const navigate=useNavigate();
     const [exp,setExp]=useState();
-    const [items,setItems]=useState();
+    const [items,setItems]=useState([]);
     const [ctc,setCtc]=useState();
     useEffect(()=>{
         if(jobtotal){
@@ -94,7 +94,7 @@ function Home() {
             <button onClick={()=>{
                 setFilterData()
             }}>Filter Data</button>
-        {items!==undefined && items.filter((el)=>el.title.includes(searchItem)).map((el)=>(
+        {items.length>0 ? items.filter((el)=>el.title.includes(searchItem)).map((el)=>(
             <div className='job-card'>
                 <p>
                     <div><b>Job Title</b> : {el.title}</div>
@@ -111,7 +111,7 @@ function Home() {
                     }}>Show Details</button>
                 </p>
             </div>
-        ))}
+        )):<h1>No data</h1>}
     </div>
   )
 }
