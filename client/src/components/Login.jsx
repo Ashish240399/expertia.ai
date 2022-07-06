@@ -17,7 +17,7 @@ function Login() {
         e.preventDefault();
         console.log(user)
         try {
-            await fetch("http://localhost:5000/users/login",{
+            await fetch("https://job-portal-app-ex.herokuapp.com/users/login",{
                 method:"POST",
                 headers:{
                     "Content-Type":"application/json"
@@ -26,7 +26,7 @@ function Login() {
             }).then(async(res)=>{
                 console.log(res);
                 if(res.status==200){
-                    const data=await fetch(`http://localhost:5000/users/${user.email}`);
+                    const data=await fetch(`https://job-portal-app-ex.herokuapp.com/users/${user.email}`);
                     const respond=await data.json();
                     localStorage.setItem("user",JSON.stringify(respond));
                 }

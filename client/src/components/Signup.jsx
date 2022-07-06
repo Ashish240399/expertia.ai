@@ -16,7 +16,7 @@ function Signup() {
     function handleSubmit(e){
         e.preventDefault();
         console.log(user)
-        fetch("http://localhost:5000/users/register",{
+        fetch("https://job-portal-app-ex.herokuapp.com/users/register",{
             method:"POST",
             headers:{
                 "Content-Type":"application/json"

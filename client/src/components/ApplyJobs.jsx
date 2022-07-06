@@ -7,7 +7,7 @@ function ApplyJobs() {
     async function formSubmit(e){
         e.preventDefault();
         let applied=false;
-        const data=await fetch(`http://localhost:5000/users/${user._id}/by-Id`);
+        const data=await fetch(`https://job-portal-app-ex.herokuapp.com/users/${user._id}/by-Id`);
         const res=await data.json();
         console.log(res.applied_job)
         if(res.applied_job!==undefined){
@@ -20,7 +20,7 @@ function ApplyJobs() {
         }
         if(!applied){
             console.log("in")
-            fetch(`http://localhost:5000/users/${user._id}/job_apply`,{
+            fetch(`https://job-portal-app-ex.herokuapp.com/users/${user._id}/job_apply`,{
                 method:"POST",
                 headers:{
                     "Content-Type":"application/json"

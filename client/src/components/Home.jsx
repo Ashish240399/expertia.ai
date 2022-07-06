@@ -17,7 +17,7 @@ function Home() {
     },[jobtotal])
     const {searchItem}=useContext(SearchContext)
     async function allJobs(){
-        const data=await fetch("http://localhost:5000/jobs");
+        const data=await fetch("https://job-portal-app-ex.herokuapp.com/jobs");
         const res=await data.json();
         totalJobs(res);
     }
