@@ -22,7 +22,7 @@ function ApplyJobs() {
         if(applied==false){
             console.log("in");
             
-            fetch(`http://localhost:5000/users/${user._id}/job_apply`,{
+            fetch(`https://job-portal-app-ex.herokuapp.com/users/${user._id}/job_apply`,{
                 method:"POST",
                 headers:{
                     "Content-Type":"application/json"
